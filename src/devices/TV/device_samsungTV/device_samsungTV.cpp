@@ -19,8 +19,8 @@ uint16_t SAMSUNG_NUM_9           ; //"Samsung_num_9";
 uint16_t SAMSUNG_NUM_0           ; //"Samsung_num_0";
 // uint16_t SAMSUNG_TTXMIX          ; //"Samsung_ttxmix";
 // uint16_t SAMSUNG_PRECH           ; //"Samsung_prech";
-// uint16_t SAMSUNG_VOL_MINUS       ; //"Samsung_vol_minus";
-// uint16_t SAMSUNG_VOL_PLUS        ; //"Samsung_vol_plus";
+uint16_t SAMSUNG_VOL_MINUS       ; //"Samsung_vol_minus";
+uint16_t SAMSUNG_VOL_PLUS        ; //"Samsung_vol_plus";
 // uint16_t SAMSUNG_MUTE_TOGGLE     ; //"Samsung_mute_toggle";
 // uint16_t SAMSUNG_CHLIST          ; //"Samsung_chlist";
 uint16_t SAMSUNG_CHANNEL_UP      ; //"Samsung_channel_up";
@@ -58,7 +58,7 @@ uint16_t SAMSUNG_POWER_ON        ; //"Samsung_power_on";
 uint16_t SAMSUNG_INPUT_HDMI_1    ; //"Samsung_input_hdmi_1";
 uint16_t SAMSUNG_INPUT_HDMI_2    ; //"Samsung_input_hdmi_2";
 uint16_t SAMSUNG_INPUT_HDMI_3    ; //"Samsung_input_hdmi_3";
-// uint16_t SAMSUNG_INPUT_HDMI_4    ; //"Samsung_input_hdmi_4";
+uint16_t SAMSUNG_INPUT_HDMI_4    ; //"Samsung_input_hdmi_4";
 // uint16_t SAMSUNG_INPUT_COMPONENT ; //"Samsung_input_component";
 uint16_t SAMSUNG_INPUT_TV        ; //"Samsung_input_tv";
 
@@ -83,8 +83,8 @@ void register_device_samsungTV() {
   register_command(&SAMSUNG_NUM_0             , makeCommandData(IR, {std::to_string(IR_PROTOCOL_SAMSUNG), "0xE0E08877"}));
   // register_command(&SAMSUNG_TTXMIX            , makeCommandData(IR, {std::to_string(IR_PROTOCOL_SAMSUNG), "0xE0E034CB"}));
   // register_command(&SAMSUNG_PRECH             , makeCommandData(IR, {std::to_string(IR_PROTOCOL_SAMSUNG), "0xE0E0C837"}));
-  // register_command(&SAMSUNG_VOL_MINUS         , makeCommandData(IR, {std::to_string(IR_PROTOCOL_SAMSUNG), "0xE0E0D02F"}));
-  // register_command(&SAMSUNG_VOL_PLUS          , makeCommandData(IR, {std::to_string(IR_PROTOCOL_SAMSUNG), "0xE0E0E01F"}));
+  register_command(&SAMSUNG_VOL_MINUS         , makeCommandData(IR, {std::to_string(IR_PROTOCOL_SAMSUNG), "0xE0E0D02F"}));
+  register_command(&SAMSUNG_VOL_PLUS          , makeCommandData(IR, {std::to_string(IR_PROTOCOL_SAMSUNG), "0xE0E0E01F"}));
   // register_command(&SAMSUNG_MUTE_TOGGLE       , makeCommandData(IR, {std::to_string(IR_PROTOCOL_SAMSUNG), "0xE0E0F00F"}));
   // register_command(&SAMSUNG_CHLIST            , makeCommandData(IR, {std::to_string(IR_PROTOCOL_SAMSUNG), "0xE0E0D629"}));
   register_command(&SAMSUNG_CHANNEL_UP        , makeCommandData(IR, {std::to_string(IR_PROTOCOL_SAMSUNG), "0xE0E048B7"}));
@@ -122,7 +122,7 @@ void register_device_samsungTV() {
   register_command(&SAMSUNG_INPUT_HDMI_1      , makeCommandData(IR, {std::to_string(IR_PROTOCOL_SAMSUNG), "0xE0E09768"}));
   register_command(&SAMSUNG_INPUT_HDMI_2      , makeCommandData(IR, {std::to_string(IR_PROTOCOL_SAMSUNG), "0xE0E07D82"}));
   register_command(&SAMSUNG_INPUT_HDMI_3      , makeCommandData(IR, {std::to_string(IR_PROTOCOL_SAMSUNG), "0xE0E043BC"}));
-  // register_command(&SAMSUNG_INPUT_HDMI_4      , makeCommandData(IR, {std::to_string(IR_PROTOCOL_SAMSUNG), "0xE0E0A35C"}));
+  register_command(&SAMSUNG_INPUT_HDMI_4      , makeCommandData(IR, {std::to_string(IR_PROTOCOL_SAMSUNG), "0xE0E0A35C"}));
   // register_command(&SAMSUNG_INPUT_COMPONENT   , makeCommandData(IR, {std::to_string(IR_PROTOCOL_SAMSUNG), "0xE0E0619E"}));
   register_command(&SAMSUNG_INPUT_TV          , makeCommandData(IR, {std::to_string(IR_PROTOCOL_SAMSUNG), "0xE0E0D827"}));
   // unknown commands. Not on my remote

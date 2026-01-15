@@ -54,10 +54,10 @@ void scene_setKeys_appleTV() {
 void scene_start_sequence_appleTV(void) {
   executeCommand(SAMSUNG_POWER_ON);
   delay(500);
-  executeCommand(YAMAHA_POWER_ON);
-  delay(1500);
-  executeCommand(YAMAHA_INPUT_DVD);
-  delay(3000);
+  // executeCommand(YAMAHA_POWER_ON);
+  // delay(1500);
+  // executeCommand(YAMAHA_INPUT_DVD);
+  // delay(3000);
   executeCommand(SAMSUNG_INPUT_HDMI_3);
 
 }

@@ -17,6 +17,7 @@
 #endif // ENABLE_KEYBOARD_BLE
 //   TV
 #include "devices/TV/device_samsungTV/device_samsungTV.h"
+#include "devices/TV/device_tvMQTT/device_tvMQTT.h"
 //#include "devices/TV/device_lgTV/device_lgTV.h"
 //#include "devices/TV/device_sonyTV/device_sonyTV.h.h"
 //   AV receiver
@@ -31,6 +32,8 @@
 //#include "devices/mediaPlayer/device_shield/device_shield.h"
 //   misc
 #include "devices/misc/device_smarthome/device_smarthome.h"
+#include "devices/misc/device_kinvioBN550/device_kinvioBN550.h"
+#include "devices/misc/device_hdmiSwitchMQTT/device_hdmiSwitchMQTT.h"
 //#include "devices/misc/device_airconditioner/device_airconditioner.h"
 // register gui and keys
 #include "applicationInternal/gui/guiBase.h"
@@ -53,6 +56,7 @@
 #include "scenes/scene_fireTV.h"
 #include "scenes/scene_chromecast.h"
 #include "scenes/scene_appleTV.h"
+#include "scenes/scene_roku.h"
 #include "applicationInternal/scenes/sceneHandler.h"
 
 #if defined(ARDUINO)
@@ -90,6 +94,7 @@ int main(int argc, char *argv[]) {
   register_specialCommands();
   //   TV
   register_device_samsungTV();
+  register_device_tvMQTT();
   //register_device_lgTV();
   //register_device_sonyTV();
   //   AV receiver
@@ -104,6 +109,8 @@ int main(int argc, char *argv[]) {
   //register_device_shield();
   //   misc
   register_device_smarthome();
+  register_device_kinvioBN550();
+  register_device_hdmiSwitchMQTT();
   //register_device_airconditioner();
 
   #if (ENABLE_KEYBOARD_MQTT == 1)
@@ -129,7 +136,7 @@ int main(int argc, char *argv[]) {
   // Only show these GUIs in the main gui list. If you don't set this explicitely, by default all registered guis are shown.
   #if (USE_SCENE_SPECIFIC_GUI_LIST != 0)
   main_gui_list =
-    {tabName_yamahaAmp, tabName_sceneSelection, tabName_smarthome, tabName_settings, tabName_irReceiver
+    {tabName_sceneSelection, tabName_settings, tabName_irReceiver
     #if (ENABLE_KEYBOARD_BLE == 1)
     , tabName_blepairing
     #endif
@@ -141,16 +148,17 @@ int main(int argc, char *argv[]) {
   register_scene_TV();
   register_scene_fireTV();
   register_scene_chromecast();
+  register_scene_roku();
   register_scene_appleTV();
   register_scene_allOff();
   // Only show these scenes on the sceneSelection gui. If you don't set this explicitely, by default all registered scenes are shown.
-  set_scenes_on_sceneSelectionGUI({scene_name_TV, scene_name_fireTV, scene_name_chromecast, scene_name_appleTV});
+  set_scenes_on_sceneSelectionGUI({scene_name_TV, scene_name_roku, scene_name_chromecast});
 
   // init GUI - will initialize tft, touch and lvgl
   init_gui(); // This has to come before any other i2c devices are initialized, otherwise the i2c bus will not be powered
   setLabelActiveScene();
   gui_loop(); // Run the LVGL UI once before the loop takes over
-  
+
   // Power Pin and battery monitor definition
   init_battery();
 
