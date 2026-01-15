@@ -15,6 +15,7 @@
 #include "scenes/scene_fireTV.h"
 #include "scenes/scene_chromecast.h"
 #include "scenes/scene_appleTV.h"
+#include "scenes/scene_roku.h"
 
 uint16_t SCENE_SELECTION;
 std::string scene_name_selection = "sceneSelection";
@@ -92,8 +93,8 @@ void register_scene_defaultKeys(void) {
     {KEY_VOLDO, TV_MQTT_VOL_DOWN },
     {KEY_REC,   SCENE_BACK_TO_PREVIOUS_GUI_LIST  },
     /*{KEY_CHDOW, COMMAND_UNKNOWN  },*/
-    {KEY_RED,   SCENE_TV_FORCE   },
-    {KEY_GREEN, SCENE_FIRETV_FORCE},
+    {KEY_RED,   SCENE_ROKU_FORCE   },
+    {KEY_GREEN, SCENE_TV_FORCE},
     {KEY_YELLO, SCENE_CHROMECAST_FORCE},
     {KEY_BLUE,  SCENE_APPLETV_FORCE},
   };
