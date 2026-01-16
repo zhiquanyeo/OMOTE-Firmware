@@ -27,6 +27,7 @@
 //#include "devices/AVreceiver/device_lgsoundbar/device_lgsoundbar.h"
 //   media player
 #include "devices/mediaPlayer/device_appleTV/device_appleTV.h"
+#include "devices/mediaPlayer/device_roku/device_rokuMQTT.h"
 //#include "devices/mediaPlayer/device_lgbluray/device_lgbluray.h"
 //#include "devices/mediaPlayer/device_samsungbluray/device_samsungbluray.h"
 //#include "devices/mediaPlayer/device_shield/device_shield.h"
@@ -45,6 +46,7 @@
 #include "guis/gui_BLEpairing.h"
 #include "devices/AVreceiver/device_yamahaAmp/gui_yamahaAmp.h"
 #include "devices/mediaPlayer/device_appleTV/gui_appleTV.h"
+#include "devices/mediaPlayer/device_roku/gui_roku.h"
 #include "devices/misc/device_smarthome/gui_smarthome.h"
 //#include "devices/misc/device_airconditioner/gui_airconditioner.h"
 #include "applicationInternal/keys.h"
@@ -104,6 +106,7 @@ int main(int argc, char *argv[]) {
   //register_device_lgsoundbar();
   //   media player
   register_device_appleTV();
+  register_device_rokuMQTT();
   //register_device_lgbluray();
   //register_device_samsungbluray();
   //register_device_shield();
@@ -126,6 +129,7 @@ int main(int argc, char *argv[]) {
   register_gui_irReceiver();
   register_gui_settings();
   register_gui_appleTV();
+  register_gui_roku();
   register_gui_numpad();
   #if (ENABLE_KEYBOARD_BLE == 1)
   register_gui_blepairing();
@@ -152,7 +156,7 @@ int main(int argc, char *argv[]) {
   register_scene_appleTV();
   register_scene_allOff();
   // Only show these scenes on the sceneSelection gui. If you don't set this explicitely, by default all registered scenes are shown.
-  set_scenes_on_sceneSelectionGUI({scene_name_TV, scene_name_roku, scene_name_chromecast});
+  set_scenes_on_sceneSelectionGUI({scene_name_TV, scene_name_roku, scene_name_chromecast, scene_name_appleTV});
 
   // init GUI - will initialize tft, touch and lvgl
   init_gui(); // This has to come before any other i2c devices are initialized, otherwise the i2c bus will not be powered
