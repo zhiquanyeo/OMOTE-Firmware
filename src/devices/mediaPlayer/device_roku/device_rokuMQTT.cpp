@@ -8,7 +8,7 @@ uint16_t ROKU_RIGHT;
 uint16_t ROKU_OK;
 
 uint16_t ROKU_PLAY;
-uint16_t ROKU_PAUSE;
+uint16_t ROKU_REPLAY;
 uint16_t ROKU_RWD;
 uint16_t ROKU_FF;
 
@@ -27,7 +27,7 @@ void register_device_rokuMQTT() {
     register_command(&ROKU_OK,      makeCommandData(MQTT, {"OMOTE/roku/navigation", "OK"}));
 
     register_command(&ROKU_PLAY,    makeCommandData(MQTT, {"OMOTE/roku/media", "PLAY"}));
-    register_command(&ROKU_PAUSE,   makeCommandData(MQTT, {"OMOTE/roku/media", "PAUSE"}));
+    register_command(&ROKU_REPLAY,  makeCommandData(MQTT, {"OMOTE/roku/media", "REPLAY"}));
     register_command(&ROKU_RWD,     makeCommandData(MQTT, {"OMOTE/roku/media", "REWIND"}));
     register_command(&ROKU_FF,      makeCommandData(MQTT, {"OMOTE/roku/media", "FFWD"}));
 

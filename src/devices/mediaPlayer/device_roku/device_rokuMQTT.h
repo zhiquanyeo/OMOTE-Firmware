@@ -7,7 +7,7 @@ extern uint16_t ROKU_RIGHT;
 extern uint16_t ROKU_OK;
 
 extern uint16_t ROKU_PLAY;
-extern uint16_t ROKU_PAUSE;
+extern uint16_t ROKU_REPLAY;
 extern uint16_t ROKU_RWD;
 extern uint16_t ROKU_FF;
 

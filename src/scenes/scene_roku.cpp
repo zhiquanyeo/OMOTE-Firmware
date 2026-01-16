@@ -27,6 +27,7 @@ void scene_setKeys_roku() {
     {KEY_REWI, SHORT_REPEATED},
     {KEY_FORW, SHORT_REPEATED},
     {KEY_PLAY, SHORT},
+    {KEY_STOP, SHORT},
     {KEY_LEFT, SHORT_REPEATED},
     {KEY_RIGHT, SHORT_REPEATED},
     {KEY_UP, SHORT_REPEATED},
@@ -47,7 +48,7 @@ void scene_setKeys_roku() {
   };
 
   key_commands_short_roku = {
-    {KEY_STOP, ROKU_PAUSE},
+    {KEY_STOP, ROKU_REPLAY},
     {KEY_PLAY, ROKU_PLAY},
     {KEY_REWI, ROKU_RWD},
     {KEY_FORW, ROKU_FF},
